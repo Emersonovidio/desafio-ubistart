@@ -1,6 +1,5 @@
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const service = require('../services/loginService');
 
 const SECRET = 'meusegredo'
 const configJwt = { 

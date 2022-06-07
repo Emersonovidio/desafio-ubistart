@@ -6,17 +6,21 @@ app.use(express.json());
 
 const validation = require('./middlewares/validateUser');
 const tokenValidation = require('./middlewares/validateToken');
-const { registerUser } = require('./controllers/userController');
-const { login } = require('./controllers/loginController');
+
+const { registerUser, login, addTask, getAllTasks
+ } = require('./controllers/userController');
+const { loginAdmin } =  require('./controllers/adminController');
 
 app.use(bodyParser.json());
 
 app.use('/register', validation.email, validation.senha, registerUser);
 app.use('/login', tokenValidation.validToken, login);
-// app.use('/user', () => {});
+app.use('/user', validation.email, validation.senha, addTask);
+app.use('/user', getAllTasks);
+app.use('/admin', tokenValidation.validToken, loginAdmin);
 
 const PORT = process.env.PORT || 8000;
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.send(" - Wellcome To Tasklists API - ");
 });
 
