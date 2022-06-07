@@ -6,12 +6,22 @@
 
 
 
+
+
 # API de CRUD de tasks (Todo List)
+
+
+
 
 
 Desenvolvimento de uma APIRest utilizando a arquitetura MSC!
 
+
 Sistema de gerenciamento de tarefas, onde é possível criar, visualizar, deletar e atualizar tarefas tanto por usuario quanto pelo admministrador,utlizando o banco MySQL para registrar e gerenciar os dados.
+
+
+
+
 
 ------------------------------------------------------------------------------------------
 
@@ -33,6 +43,7 @@ Usuario
 Admin
 /Login - admin faz login
 /Admin - admin : listar todas tarefas, listar tarefas específicas(atrasadas) 
+
 
 
 
